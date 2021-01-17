@@ -53,8 +53,9 @@ def Crop_images(dataset):
         resized_img.append(crop1)
         #cropp.show()
         print(img)
+        print("initial image size: {}".format(image1.size))
         print("Image format: {}".format(image1.format))
-        print("image size: {}".format(crop1.size))
+        print("resized image size: {}".format(crop1.size))
         print("image mode: {}".format(crop1.mode))
         
         #Bar progress    
