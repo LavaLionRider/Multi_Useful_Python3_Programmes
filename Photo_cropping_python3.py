@@ -14,14 +14,16 @@ from natsort import natsorted
 import progressbar
 import os
 
-
-# define the name of the directory to be created
+#Load bar defenition
 bar = progressbar.ProgressBar(maxval=20, \
 widgets=[progressbar.Bar('=', '[', ']'), ' ', progressbar.Percentage()])
-path = "resized_images"
-s = time.time()
-f = time.time() #It gives you the time for processing in Second
 
+#the time for processing in Second
+s = time.time()
+f = time.time()
+
+#create a folder for output images
+path = "resized_images"
 try:
     os.mkdir(path)
 except OSError:
@@ -29,12 +31,15 @@ except OSError:
 else:
     print ("Successfully created the directory %s" % path)
    
-
+#crop image function
 def Crop_images(dataset):
+    
     img_list= []
     resized_img= []
     img_list.clear()
-    resized_img.clear() 
+    resized_img.clear()
+    
+    #inter the axis locations
     print("Enter the left size:")
     left = int(input())
     print("Enter the top size:")
@@ -51,7 +56,8 @@ def Crop_images(dataset):
         width, height = image1.size
         crop1 = image1.crop((left, top, right, bottom))
         resized_img.append(crop1)
-        #cropp.show()
+        
+
         print(img)
         print("initial image size: {}".format(image1.size))
         print("Image format: {}".format(image1.format))
@@ -71,7 +77,6 @@ def Crop_images(dataset):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Rescale images")
     parser.add_argument('-ds', '--dataset', type=str, required=True, help='Dataset containing the images')
-    #parser.add_argument('-d', '--directory', type=str, required=True, help='Dataset saving the images')
     args = parser.parse_args()
     Crop_images(args.dataset)
     
