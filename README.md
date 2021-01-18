@@ -1,6 +1,7 @@
-# Multi_Usful_Python3_programmes
+# Multi_Useful_Python3_programmes
 
 * ## Photo_cropping_python3:
+#### This piece of code is prepared for cropping photos manually.
 #### To run the code,open the terminal in the code directory and type the below code into the terminal. 
 #### Note: Change the dataset to exact address of the folder of your photos.
 
